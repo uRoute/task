@@ -1,0 +1,31 @@
+<div class="bg-black">
+<!-- 
+    <ngx-spinner name="1"
+  bdColor="rgba(51,51,51,0.8)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white">Loading...</p>
+</ngx-spinner> -->
+
+    <div class="container bg-white">
+        <div class="row">
+
+            <input [(ngModel)]="searchKey" class="form-control p-2 d-block w-75 m-4" placeholder="Search for users....." type="text">
+
+
+            @for(user of usersContainer |search : searchKey; track user.id){
+                <div class="col-md-4">
+                    <div class="user">
+                        <app-user-card [User]="usersContainer.at(user.id)"></app-user-card>
+                    </div>
+                </div>
+            }@empty {
+                <h1>no results</h1>
+                <button class="btn btn-info d-block w-full p-2">retry</button>
+            }
+        </div>
+    </div>
+   
+</div>

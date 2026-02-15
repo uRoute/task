@@ -1,0 +1,19 @@
+<div class="container">
+
+    <button class="btn btn-danger" routerLink="/home">Back</button>
+
+    <div class="container">
+        <div class="row">
+            @for(post of posts ; track post.id){
+                <div class="col-md-12">
+                    <div class="post my-3 p-2 border border-2 rounded border-subtle-primray">
+                        <h3 class="fs-5"> Post id : {{post.id}} </h3>
+                        <h3 class="fs-5 fw-bold bg-warning w-25 text-center p-2 rounded-pill"> Post user Id : {{post.userId}} </h3>
+                        <h1 class="fs-3 text-info"> Post Title : {{post.title}} </h1>
+                        <p  class="lead"> Post Body : {{post.body}} </p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
